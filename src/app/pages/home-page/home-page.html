@@ -1,0 +1,25 @@
+<!-- <p>home-page works!</p>
+<button class="btn" (click)="showAlert()">Click Me!</button> -->
+
+<div class="form-container">
+    <form class="calculator-form" [formGroup]="calculateForm">
+        <label for="num1">First Number</label>
+        <input type="text" formControlName="textField1" placeholder="Enter 1st number">
+        <label for="num2">Second Number</label>
+        <input type="text" formControlName="textField2" placeholder="Enter 2nd number">
+
+        <div class="button-group">
+            <button class="save-btn" (click)="onAdd()">
+                <i class="fa-solid fa-add"></i>
+                Add
+            </button>
+            <button class="save-btn" (click)="onSubtract()">
+                <i class="fa-solid fa-minus"></i>
+                Subtract
+            </button>
+        </div>
+        <div class="result-text">
+            Result: {{ result }}
+        </div>
+    </form>
+</div>
