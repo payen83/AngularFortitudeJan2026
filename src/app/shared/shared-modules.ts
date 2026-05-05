@@ -5,7 +5,8 @@ import { FormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatInputModule, MatLabel } from "@angular/material/input";
-
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatCardModule } from "@angular/material/card";
 
 export const SharedModules = [
     CommonModule,
@@ -15,5 +16,7 @@ export const SharedModules = [
     MatListModule,
     FormsModule,
     MatInputModule,
-    MatLabel
+    MatLabel,
+    MatDialogModule,
+    MatCardModule,
 ];

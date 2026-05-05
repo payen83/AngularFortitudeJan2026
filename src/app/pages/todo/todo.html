@@ -3,8 +3,8 @@
         <div class="header-container">
             <mat-label class="header-text">Todo List</mat-label>
             <div class="btn-container">
-                <button mat-button style="margin-right: 1em;">Add New</button>
-                <button mat-button style="margin-right: 1em;">Clear</button>
+                <button mat-button style="margin-right: 1em;" (click)="onAdd()">Add New</button>
+                <button mat-button style="margin-right: 1em;" (click)="onClear()">Clear</button>
             </div>
         </div>
         <div class="list-container">
@@ -14,11 +14,11 @@
                         <div class="todo-item">
                             <button mat-icon-button (click)="onSelected($index)">
                                 <mat-icon color="primary">
-                                    {{ todo.selected ? 'check_box':'check_box_outline_blank'}}
+                                    {{ todo.selected ? 'check_box': 'check_box_outline_blank'}}
                                 </mat-icon>
                             </button>
                             <span class="todo-name">{{ todo.title }}</span>
-                            <button mat-button class="delete" (click)="onDelete($index)">
+                            <button mat-icon-button class="delete" (click)="onDelete($index)">
                                 <mat-icon>
                                     delete_forever
                                 </mat-icon>

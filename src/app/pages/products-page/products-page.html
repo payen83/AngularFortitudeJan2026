@@ -1,0 +1,55 @@
+<div class="form-container">
+    <mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="product.title">
+    </mat-form-field>
+    <table class="example-full-width" cellSpacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Price</mat-label>
+                    <input matInput [(ngModel)]="product.price">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Image URL</mat-label>
+                    <input matInput [(ngModel)]="product.image">
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <p>
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="product.description"></textarea>
+        </mat-form-field>
+    </p>
+    @if(product.title != '' && product.price != 0 ){
+        <button mat-raised-button (click)="onSubmit()">Submit</button>
+    }
+</div>
+
+<div class="main">
+    
+    <div class="content">
+        @for(item of productList; track $index){
+            <mat-card class="example-card" appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <div class="title-group">
+                            <mat-card-title class="truncate">
+                                {{ item.title }}
+                            </mat-card-title>
+                            <mat-card-subtitle>RM{{item.price}}</mat-card-subtitle>
+                        </div>
+                    </mat-card-title-group>
+                    <img mat-card-md-image [src]="item.image">
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-button (click)="goDetail(item.id)">View more</button>
+                </mat-card-actions>
+            </mat-card>
+        }
+    </div>
+</div>
